@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Overlays from './components/Overlays';
 
 function App() {  
   const [showModal, setShowModal] = useState(false);
