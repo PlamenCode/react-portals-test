@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import './App.css';
 import Overlays from './components/Overlays';
+import { ModalContext } from './context/ModalContext';
 
 function App() {  
-  const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false)
   return (
     <div className="App">
-      <Overlays showModal={showModal} setShowModal={setShowModal} />
+      <ModalContext.Provider value={{showModal, setShowModal}}>
+        <Overlays />
 
-      <button onClick={() => setShowModal(!showModal)}>Toggle Modal</button>
+        <button onClick={() => setShowModal(true)}>Show Modal</button>
+      </ModalContext.Provider>
     </div>
   );
 
