@@ -6,11 +6,11 @@ import { ModalContext } from '../context/ModalContext';
 const mountElement = document.getElementById('overlays');
 
 export default function Overlays() {
-  const modal = useContext(ModalContext);
+  const { showModal } = useContext(ModalContext);
   return (
     createPortal(
         <>
-            {modal.showModal && <Modal />}
+            {showModal && <Modal />}
         </>,
         mountElement
     )

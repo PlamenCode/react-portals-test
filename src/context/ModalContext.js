@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const ModalContext = createContext(null);
+export const ModalContext = createContext(undefined);
 
 function ModalContextProvider({ children }) {
     const [showModal, setShowModal] = useState(false)
